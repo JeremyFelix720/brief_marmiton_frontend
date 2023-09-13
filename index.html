@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>Marmitop</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Marmitop</h1>
+      <form class="add_form_recipe">
+        <fieldset>
+          <legend> Informations sur la nouvelle recette </legend>
+
+          <section class="form_recipe_fields">
+            <article class="recipe_fields">
+              <label>Nom</label>
+              <input id="recipe_name_field" type="text" placeholder="Ex. : choux à la fraise">
+            </article>
+            <article class="recipe_fields">
+              <label>Lien de l'image</label>
+              <input id="recipe_link_field" type="text" placeholder="Ex. : http://www.macuisinesante.com/wp-content/uploads/2015/05/choux_fraises_DG.jpg">
+            </article>
+            <article class="recipe_fields">
+              <label>Durée (en minutes)</label>
+              <input id="recipe_duration_field" type="text" placeholder="Ex. : 55">
+            </article>
+            <article class="recipe_fields">
+              <label>Note</label>
+              <input id="recipe_note_field" type="text" placeholder="Ex. : c'est vraiment délicieux !">
+            </article>
+          </section>
+          <button id="add_button">Ajouter</button>
+        </fieldset>
+      </form>
+
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
