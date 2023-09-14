@@ -9,33 +9,31 @@
   <body>
     <div id="app">
       <h1>Marmitop</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" class="cooking_pot_icon" viewBox="0 0 256 256"><path fill="currentColor" d="M76 40V16a12 12 0 0 1 24 0v24a12 12 0 0 1-24 0Zm52 12a12 12 0 0 0 12-12V16a12 12 0 0 0-24 0v24a12 12 0 0 0 12 12Zm40 0a12 12 0 0 0 12-12V16a12 12 0 0 0-24 0v24a12 12 0 0 0 12 12Zm83.2 53.6L224 126v58a36 36 0 0 1-36 36H68a36 36 0 0 1-36-36v-58L4.8 105.6a12 12 0 0 1 14.4-19.2L32 96v-8a20 20 0 0 1 20-20h152a20 20 0 0 1 20 20v8l12.8-9.6a12 12 0 0 1 14.4 19.2ZM200 92H56v92a12 12 0 0 0 12 12h120a12 12 0 0 0 12-12Z"/></svg>
+      <h2>Ajoutez une nouvelle recette !</h2>
       <form class="add_form_recipe">
-        <fieldset>
-          <legend> Informations sur la nouvelle recette </legend>
-
-          <section class="form_recipe_fields">
-            <article class="recipe_fields">
-              <label>Nom</label>
-              <input id="recipe_name_field" type="text" placeholder="Ex. : choux à la fraise">
-            </article>
-            <article class="recipe_fields">
-              <label>Lien de l'image</label>
-              <input id="recipe_link_field" type="text" placeholder="Ex. : http://www.macuisinesante.com/wp-content/uploads/2015/05/choux_fraises_DG.jpg">
-            </article>
-            <article class="recipe_fields">
-              <label>Durée (en minutes)</label>
-              <input id="recipe_duration_field" type="text" placeholder="Ex. : 55">
-            </article>
-            <article class="recipe_fields">
-              <label>Note</label>
-              <input id="recipe_note_field" type="text" placeholder="Ex. : c'est vraiment délicieux !">
-            </article>
-          </section>
-          <button id="add_button">Ajouter</button>
-        </fieldset>
+        <section class="form_recipe_fields">
+          <article class="recipe_fields">
+            <label>Nom</label>
+            <input id="recipe_name_field" type="text" placeholder="Ex. : choux à la fraise" required="required">
+          </article>
+          <article class="recipe_fields">
+            <label>URL de l'image</label>
+            <input id="recipe_link_field" type="text" placeholder="Ex. : http://www.macuisinesante.com/wp-content/uploads/2015/05/choux_fraises_DG.jpg" required="required">
+          </article>
+          <article class="recipe_fields">
+            <label>Durée (en minutes)</label>
+            <input id="recipe_duration_field" type="text" placeholder="Ex. : 55" required="required">
+          </article>
+          <article class="recipe_fields">
+            <label>Note</label>
+            <input id="recipe_note_field" type="text" placeholder="Ex. : 4/5" required="required">
+          </article>
+        </section>
+        <button id="add_button">Ajouter</button>
       </form>
-
     </div>
     <script type="module" src="/src/main.ts"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </body>
 </html>

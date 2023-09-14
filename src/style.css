@@ -99,16 +99,47 @@ button:focus-visible {
 /* CSS PERSO */
 
 body {
-  width: 800px;
-  margin: auto;
+  background-color: blanchedalmond;
 }
 
-fieldset {
-  border-radius: 15px;
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+
+p, label, button, input::placeholder {
+  font-size: 18px;
+}
+
+h1, h2, h3, p, input::placeholder {
+  color: saddlebrown;
+}
+
+.add_form_recipe label {
+  color: blanchedalmond;
 }
 
 .add_form_recipe {
-  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 15px;
+  background-color: chocolate;
+  border: 3px solid burlywood;
+  border-radius: 15px;
 }
 
 .form_recipe_fields {
@@ -129,14 +160,69 @@ fieldset {
 }
 
 #add_button {
-  background-color: grey;
-  color: white;
+  background-color: saddlebrown;
+  border: 3px solid burlywood;
+  color: blanchedalmond;
+  font-weight: bold;
   margin: 15px 0px;
-  padding: 10px;
+  padding: 5px 15px 8px 15px;
+  border-radius: 50px;
+  transition:
+  width 1s,
+  height 1s,
+  background-color 1s,
+  transform 1s;
+}
+
+#add_button:hover {
+  background-color: blanchedalmond;
+  color: saddlebrown;
+  border: 3px solid saddlebrown;
+}
+
+input {
+  background-color: burlywood;
+  padding: 7px 15px 4px 15px;
+  border-radius: 15px;
+  border: 3px solid burlywood;
+}
+
+input:hover, input:focus  {
+  background-color: blanchedalmond;
 }
 
 .recipe_contenairs {
-  background-color: lightgray;
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  border: 3px solid burlywood;
+  background-color: blanchedalmond;
   border-radius: 15px;
   padding: 15px;
+  margin-top: 30px;
+}
+
+.column_recipes {
+  width: 49%;
+  text-align: left;
+}
+
+.recipe_image_frames {
+  aspect-ratio: 16/9;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.cooking_pot_icon {
+  width: 80px;
+  height: 80px;
+  color: saddlebrown;
+}
+
+@media (max-width: 780px) {
+  .recipe_fields, .column_recipes {
+    width: 100%;
+  }
 }
