@@ -39,7 +39,7 @@ addButton.addEventListener("click", function(event){
     document.querySelector("#" + idNewRecipe + " .recipe_descriptions")?.appendChild(recipeTitleResult);
   
     const recipeNoteResult = document.createElement("p");
-    recipeNoteResult.innerText = "Note : " + recipeNoteField.value;
+    recipeNoteResult.innerText = "Note : " + recipeNoteField.value + "/5";
     document.querySelector("#" + idNewRecipe + " .recipe_descriptions")?.appendChild(recipeNoteResult);
   
     const recipeDurationResult = document.createElement("p");
@@ -52,10 +52,16 @@ addButton.addEventListener("click", function(event){
     recipeImageFrame.style.backgroundImage = "url(" + recipeLinkField.value + ")";
     document.querySelector("#" + idNewRecipe)?.appendChild(recipeImageFrame);
 
+    // http://localhost:3032/add_recipe/super_recette/55/4/
+    // envoi de la donnée du frontend vers le backend
+    fetch("http://localhost:3032/add_recipe/" + recipeNameField.value + "/" + recipeDurationField.value + "/" + recipeNoteField.value + "/", {
+      method: "POST",
+    });
+
     // Effacement des champs du formulaire
     recipeNameField.value = "";
-    recipeNoteField.value = "";
     recipeDurationField.value = "";
+    recipeNoteField.value = "";
     recipeLinkField.value = "";
   }
 });
