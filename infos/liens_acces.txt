@@ -1,0 +1,15 @@
+
+Lien d'accès vers le brief :
+https://simplonline.co/briefs/e5bcebb9-dd7b-446a-8bac-6427817b00af
+
+Lien d'accès vers le repository GitHub :
+https://github.com/JeremyFelix720/brief_marmiton_frontend
+https://github.com/JeremyFelix720/brief_marmiton_backend
+
+Lien du wireframe en ligne :
+https://app.moqups.com/RMIteZtll0RBw8MaMDXAvdol9GDW1lM9/view/page/ad64222d5
+
+Pour récupérer l'url du site généré avec Vite :
+npm run dev (à la racine de mon projet)
+http://localhost:5173/
+

@@ -8,10 +8,45 @@ const recipeNoteField = document.querySelector("#recipe_note_field") as HTMLInpu
 
 let idCompteur = 0;
 
+/*
+async function init() {
+  const response = await fetch("http://localhost:3032/send-name", {
+    headers: new Headers({
+      "Content-Type": "application/json",
+    }),
+    method: "POST",
+    body: JSON.stringify({
+      name: "John",
+    }),
+  })
+  console.log(response)
+  const data = await response.json()
+  console.log(data)
+}
+*/
+
+async function onAdd(recipeNameField:HTMLInputElement, recipeDurationField:HTMLInputElement, recipeNoteField:HTMLInputElement, recipeLinkField:HTMLInputElement) {
+  const response = await fetch("http://localhost:3032/add_recipes", {
+    headers: new Headers({
+      "Content-Type": "application/json",
+    }),
+    method: "POST",
+    body: JSON.stringify({
+      name: recipeNameField.value,
+      duration: parseInt(recipeDurationField.value),
+      note: parseInt(recipeNoteField.value),
+      link: recipeLinkField.value
+    }),
+  })
+  console.log(response)
+  const data = await response.json()
+  console.log(data)
+}
+
 addButton.addEventListener("click", function(event){
 
   if(recipeNameField.value != "" && recipeNoteField.value != "" && recipeDurationField.value && recipeLinkField.value != "") {
-
+    
     if(idCompteur == 0) {
       const myRecipesTitle = document.createElement("h2");
       myRecipesTitle.innerText = "Mes recettes";
@@ -52,11 +87,15 @@ addButton.addEventListener("click", function(event){
     recipeImageFrame.style.backgroundImage = "url(" + recipeLinkField.value + ")";
     document.querySelector("#" + idNewRecipe)?.appendChild(recipeImageFrame);
 
-    // http://localhost:3032/add_recipe/super_recette/55/4/
     // envoi de la donnée du frontend vers le backend
+    /*
     fetch("http://localhost:3032/add_recipe/" + recipeNameField.value + "/" + recipeDurationField.value + "/" + recipeNoteField.value + "/", {
       method: "POST",
     });
+    */
+
+    // Façon plus efficace pour envoyer la donnée (du frontend au backend) avec la méthode POST car on peut gérer des formats de données complexes (ex. : hyperliens, tableaux, etc.) sans devoir les rajouter dans des paramettres de la route)
+    onAdd(recipeNameField, recipeDurationField, recipeNoteField, recipeLinkField);
 
     // Effacement des champs du formulaire
     recipeNameField.value = "";
